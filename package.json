@@ -6,7 +6,11 @@
   "scripts": {
     "test": "node test.js"
   },
-  "keywords": [],
+  "keywords": [
+    "deprecate",
+    "deprecated",
+    "deprecation"
+  ],
   "author": "Gregor Martynus (https://twitter.com/gr2m",
   "license": "ISC",
   "repository": {
