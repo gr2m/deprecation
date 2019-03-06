@@ -2,6 +2,8 @@
 
 > Log a deprecation message with stack
 
+![build](https://action-badges.now.sh/gr2m/deprecation)
+
 ## Usage
 
 ```js
