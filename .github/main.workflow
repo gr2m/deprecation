@@ -1,6 +1,6 @@
-workflow "Test" {
+workflow "Test & Release" {
   on = "push"
-  resolves = ["npm test"]
+  resolves = ["npx semantic-release"]
 }
 
 action "npm ci" {
