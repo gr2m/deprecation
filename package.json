@@ -1,6 +1,6 @@
 {
   "name": "deprecation",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "Log a deprecation message with stack",
   "main": "index.js",
   "scripts": {
@@ -8,5 +8,12 @@
   },
   "keywords": [],
   "author": "Gregor Martynus (https://twitter.com/gr2m",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gr2m/deprecation.git"
+  },
+  "devDependencies": {
+    "semantic-release": "^15.13.3"
+  }
 }
