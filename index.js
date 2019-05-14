@@ -12,4 +12,4 @@ class Deprecation extends Error {
   }
 }
 
-module.exports = module.exports.Deprecation = Deprecation
+module.exports.Deprecation = Deprecation
