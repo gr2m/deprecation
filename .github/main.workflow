@@ -29,7 +29,7 @@ action "mv pkg/* ." {
 }
 
 action "npx semantic-release" {
-  needs = "pkg/* ."
+  needs = "mv pkg/* ."
   uses = "docker://timbru31/node-alpine-git"
   runs = "npx"
   args = "semantic-release"
