@@ -27,7 +27,4 @@ action "npx semantic-release" {
   uses = "docker://timbru31/node-alpine-git"
   runs = "npx semantic-release"
   secrets = ["GH_TOKEN", "NPM_TOKEN"]
-  env = {
-    CWD = "/github/workspace/pkg"
-  }
 }
