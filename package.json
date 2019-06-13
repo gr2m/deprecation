@@ -2,9 +2,10 @@
   "name": "deprecation",
   "version": "0.0.0-development",
   "description": "Log a deprecation message with stack",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "types": "src/index.d.ts",
   "scripts": {
+    "build": "pack build",
+    "pretest": "npm run -s build",
     "test": "node test.js"
   },
   "keywords": [
@@ -19,6 +20,28 @@
     "url": "https://github.com/gr2m/deprecation.git"
   },
   "devDependencies": {
+    "@pika/pack": "^0.3.7",
+    "@pika/plugin-build-node": "^0.4.0",
+    "@pika/plugin-build-types": "^0.4.0",
+    "@pika/plugin-build-web": "^0.4.0",
+    "@pika/plugin-standard-pkg": "^0.4.0",
     "semantic-release": "^15.13.3"
+  },
+  "dependencies": {},
+  "@pika/pack": {
+    "pipeline": [
+      [
+        "@pika/plugin-standard-pkg"
+      ],
+      [
+        "@pika/plugin-build-node"
+      ],
+      [
+        "@pika/plugin-build-web"
+      ],
+      [
+        "@pika/plugin-build-types"
+      ]
+    ]
   }
 }
