@@ -25,8 +25,8 @@ action "filter: master branch" {
 action "npx semantic-release" {
   needs = "filter: master branch"
   uses = "docker://timbru31/node-alpine-git"
-  runs = "npx"
-  args = "semantic-release"
+  runs = "npm"
+  args = "run semantic-release"
   secrets = ["GH_TOKEN", "NPM_TOKEN"]
   env = {
     INIT_CWD = "/github/home/pkg"
