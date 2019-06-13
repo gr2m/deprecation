@@ -6,22 +6,50 @@
 
 ## Usage
 
+<table>
+<tbody valign=top align=left>
+<tr><th>
+Browsers
+</th><td width=100%>
+
+Load `deprecation` directly from [cdn.pika.dev](https://cdn.pika.dev)
+
+```html
+<script type="module">
+  import { Deprecation } from "https://cdn.pika.dev/deprecation/v2";
+</script>
+```
+
+</td></tr>
+<tr><th>
+Node
+</th><td>
+
+Install with `npm install deprecation`
+
 ```js
-const Deprecation = require('deprecation')
+const { Deprecation } = require("deprecation");
+// or: import { Deprecation } from "deprecation";
+```
 
-function foo () {
-  bar()
+</td></tr>
+</tbody>
+</table>
+
+```js
+function foo() {
+  bar();
 }
 
-function bar () {
-  baz() 
+function bar() {
+  baz();
 }
 
-function baz () {
-  console.warn(new Deprecation('[my-lib] foo() is deprecated, use bar()'))
+function baz() {
+  console.warn(new Deprecation("[my-lib] foo() is deprecated, use bar()"));
 }
 
-foo()
+foo();
 // { Deprecation: [my-lib] foo() is deprecated, use bar()
 //     at baz (/path/to/file.js:12:15)
 //     at bar (/path/to/file.js:8:3)
@@ -31,17 +59,17 @@ foo()
 To log a deprecation message only once, you can use the [once](https://www.npmjs.com/package/once) module.
 
 ```js
-const Deprecation = require('deprecation')
-const once = require('once')
+const Deprecation = require("deprecation");
+const once = require("once");
 
-const deprecateFoo = once(console.warn)
+const deprecateFoo = once(console.warn);
 
-function foo () {
-  deprecateFoo(new Deprecation('[my-lib] foo() is deprecated, use bar()'))
+function foo() {
+  deprecateFoo(new Deprecation("[my-lib] foo() is deprecated, use bar()"));
 }
 
-foo()
-foo() // logs nothing
+foo();
+foo(); // logs nothing
 ```
 
 ## License
