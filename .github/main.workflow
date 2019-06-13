@@ -21,12 +21,23 @@ action "filter: master branch" {
   uses = "actions/bin/filter@master"
   args = "branch master"
 }
-action "prepare release" {
+
+action "debug" {
   needs = "filter: master branch"
+  uses = "docker://node:alpine"
+  runs = "ls"
+}
+
+action "prepare release" {
+  needs = [
+    "debug",
+    "filter: master branch"
+  ]
   uses = "docker://node:alpine"
   runs = "mv"
   args = "pkg/* ."
 }
+
 
 action "npx semantic-release" {
   needs = "prepare release"
