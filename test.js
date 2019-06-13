@@ -1,6 +1,6 @@
 const assert = require('assert')
 
-const { Deprecation } = require('.')
+const { Deprecation } = require('./pkg')
 
 let deprecation
 function foo () {
