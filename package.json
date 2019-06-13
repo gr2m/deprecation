@@ -25,7 +25,7 @@
     "@pika/plugin-build-types": "^0.4.0",
     "@pika/plugin-build-web": "^0.4.0",
     "@pika/plugin-standard-pkg": "^0.4.0",
-    "semantic-release": "^15.13.3"
+    "semantic-release": "github:semantic-release/semantic-release#gr2m-actions-test"
   },
   "dependencies": {},
   "@pika/pack": {
