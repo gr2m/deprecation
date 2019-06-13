@@ -6,7 +6,8 @@
   "scripts": {
     "build": "pack build",
     "pretest": "npm run -s build",
-    "test": "node test.js"
+    "test": "node test.js",
+    "semantic-release": "semantic-release"
   },
   "keywords": [
     "deprecate",
