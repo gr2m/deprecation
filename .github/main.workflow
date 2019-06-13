@@ -4,14 +4,14 @@ workflow "Test & Release" {
 }
 
 action "npm ci" {
-  uses = "docker://node:alpine"
+  uses = "docker://timbru31/node-alpine-git"
   runs = "npm"
   args = "ci"
 }
 
 action "npm test" {
   needs = "npm ci"
-  uses = "docker://node:alpine"
+  uses = "docker://timbru31/node-alpine-git"
   runs = "npm"
   args = "test"
 }
@@ -21,17 +21,13 @@ action "filter: master branch" {
   uses = "actions/bin/filter@master"
   args = "branch master"
 }
-action "mv pkg/* ." {
-  needs = "filter: master branch"
-  uses = "debian:stable-slim"
-  runs = "mv"
-  args = "pkg/* ."
-}
 
 action "npx semantic-release" {
-  needs = "pkg/* ."
+  needs = "filter: master branch"
   uses = "docker://timbru31/node-alpine-git"
-  runs = "npx"
-  args = "semantic-release"
+  runs = "npx semantic-release"
   secrets = ["GH_TOKEN", "NPM_TOKEN"]
+  env = {
+    CWD = "/github/workspace/pkg"
+  }
 }
