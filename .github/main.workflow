@@ -21,9 +21,15 @@ action "filter: master branch" {
   uses = "actions/bin/filter@master"
   args = "branch master"
 }
+action "cd pkg" {
+  needs = "filter: master branch"
+  uses = "docker://node:alpine"
+  runs = "cd"
+  args = "pkg"
+}
 
 action "npx semantic-release" {
-  needs = "filter: master branch"
+  needs = "cd pkg"
   uses = "docker://timbru31/node-alpine-git"
   runs = "npx"
   args = "semantic-release"
