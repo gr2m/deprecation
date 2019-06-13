@@ -1,4 +1,4 @@
-class Deprecation extends Error {
+export class Deprecation extends Error {
   constructor (message) {
     super(message)
 
@@ -11,5 +11,3 @@ class Deprecation extends Error {
     this.name = 'Deprecation'
   }
 }
-
-module.exports.Deprecation = Deprecation
