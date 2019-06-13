@@ -23,7 +23,7 @@ action "filter: master branch" {
 }
 action "prepare release" {
   needs = "filter: master branch"
-  uses = "docker://debian:stable-slim"
+  uses = "docker://node:alpine"
   runs = "mv"
   args = "pkg/* ."
 }
